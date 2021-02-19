@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: br.com.kaique
+testFramework: junit
+sourceLanguage: kotlin
+buildTool: gradle
+features: [ annotation-api, app-name, data, data-jpa, gradle, h2, http-client, jdbc-hikari, junit, kotlin, kotlin-application, logback, readme, shade, tomcat-server, yaml ]

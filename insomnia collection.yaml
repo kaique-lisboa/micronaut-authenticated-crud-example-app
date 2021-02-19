@@ -1,0 +1,327 @@
+_type: export
+__export_format: 4
+__export_date: 2021-02-13T03:04:44.127Z
+__export_source: insomnia.desktop.app:v2020.5.2
+resources:
+  - _id: req_da55cb32c1204b8cb82c879db3703831
+    parentId: wrk_b1d52629a4634d4eb838db08b0aa5e52
+    modified: 1613184115859
+    created: 1612309771912
+    url: "{{ base_url }}/login"
+    name: Login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "root@root.com",
+        	"password": "root"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_7a37f12e34ab4434bf7c03cb89ef2398
+    authentication: {}
+    metaSortKey: -1613183168266
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_b1d52629a4634d4eb838db08b0aa5e52
+    parentId: null
+    modified: 1613183168222
+    created: 1612308543498
+    name: Simple Auth CRUD Example
+    description: Simple Auth CRUD Example
+    scope: null
+    _type: workspace
+  - _id: req_wrk_b1d52629a4634d4eb838db08b0aa5e52cd1c58ae
+    parentId: wrk_b1d52629a4634d4eb838db08b0aa5e52
+    modified: 1613184116944
+    created: 1613183168215
+    url: "{{ base_url }}/users/me"
+    name: GET users/me
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1613183168241
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_wrk_b1d52629a4634d4eb838db08b0aa5e5202231431
+    parentId: wrk_b1d52629a4634d4eb838db08b0aa5e52
+    modified: 1613183417632
+    created: 1613183168216
+    url: "{{ base_url }}/users"
+    name: GET users
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1613183168216
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_wrk_b1d52629a4634d4eb838db08b0aa5e52cabf3666
+    parentId: fld_6549f288baeb4f5888e97c445e32f87e
+    modified: 1613184097408
+    created: 1612308543528
+    url: "{{ base_url }}/todos"
+    name: GET todos
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1613183627844.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_6549f288baeb4f5888e97c445e32f87e
+    parentId: wrk_b1d52629a4634d4eb838db08b0aa5e52
+    modified: 1613184112097
+    created: 1613184087473
+    name: Todos
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1612308543475
+    _type: request_group
+  - _id: req_wrk_b1d52629a4634d4eb838db08b0aa5e52151cddb4
+    parentId: fld_6549f288baeb4f5888e97c445e32f87e
+    modified: 1613184102486
+    created: 1612308543526
+    url: "{{ base_url }}/todos"
+    name: POST todos
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"description": "Code all day"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0735960c103c431a8406b935d8f6c264
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1613183627794.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_wrk_b1d52629a4634d4eb838db08b0aa5e5296ffa35e
+    parentId: fld_6549f288baeb4f5888e97c445e32f87e
+    modified: 1613184107171
+    created: 1612308543516
+    url: "{{ base_url }}/todos/{{ _.lastAddedId }}"
+    name: DELETE todos/{id}
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1613183627769.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_wrk_b1d52629a4634d4eb838db08b0aa5e529b037f99
+    parentId: fld_6549f288baeb4f5888e97c445e32f87e
+    modified: 1613184104913
+    created: 1612308543524
+    url: "{{ base_url }}/todos/{{ _.lastAddedId }}"
+    name: PUT todos/{id}
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"done": true
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_bff8a3ce30494879a8cfb92869c38af8
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1613183627744.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_7f3e270199676dd5bae9644637e809c33639a11d
+    parentId: wrk_b1d52629a4634d4eb838db08b0aa5e52
+    modified: 1613183168220
+    created: 1612308543530
+    name: Base environment
+    data:
+      base_url: "{{ scheme }}://{{ host }}{{ base_path }}"
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1612308543530
+    _type: environment
+  - _id: jar_7f3e270199676dd5bae9644637e809c33639a11d
+    parentId: wrk_b1d52629a4634d4eb838db08b0aa5e52
+    modified: 1612308543603
+    created: 1612308543603
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_9feab92e9eb94782924b23921158dc74
+    parentId: wrk_b1d52629a4634d4eb838db08b0aa5e52
+    modified: 1613183168224
+    created: 1612308543499
+    fileName: Imported Workspace
+    contents: "openapi: \"3.0.3\"\r
+
+      info:\r
+
+      \  title: \"gab-web API\"\r
+
+      \  description: \"gab-web API\"\r
+
+      \  version: \"1.0.0\"\r
+
+      servers:\r
+
+      \  - url: \"https://localhost:8080\"\r
+
+      paths:\r
+
+      \  /users:\r
+
+      \    get:\r
+
+      \      summary: \"GET users\"\r
+
+      \      responses:\r
+
+      \        200:\r
+
+      \          description: \"OK\"\r
+
+      \  /users/me:\r
+
+      \    get:\r
+
+      \      summary: \"GET users/me\"\r
+
+      \      responses:\r
+
+      \        200:\r
+
+      \          description: \"OK\"\r
+
+      \  /todos:\r
+
+      \    post:\r
+
+      \      summary: \"POST todos\"\r
+
+      \      responses:\r
+
+      \        200:\r
+
+      \          description: \"OK\"\r
+
+      \  /todos/{id}:\r
+
+      \    delete:\r
+
+      \      summary: \"DELETE todos/{id}\"\r
+
+      \      parameters:\r
+
+      \        - name: \"id\"\r
+
+      \          in: \"path\"\r
+
+      \      responses:\r
+
+      \        200:\r
+
+      \          description: \"OK\""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_env_7f3e270199676dd5bae9644637e809c33639a11d_sub
+    parentId: env_7f3e270199676dd5bae9644637e809c33639a11d
+    modified: 1613184021325
+    created: 1612308543531
+    name: OpenAPI env
+    data:
+      scheme: http
+      base_path: ""
+      host: localhost:8080
+      token: "{% response 'body', 'req_da55cb32c1204b8cb82c879db3703831',
+        'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'never', 60 %}"
+      lastAddedId: "{% response 'body',
+        'req_wrk_b1d52629a4634d4eb838db08b0aa5e52cabf3666',
+        'b64::JFstMTpdLmlk::46b', 'always', 60 %}"
+    dataPropertyOrder:
+      "&":
+        - scheme
+        - base_path
+        - host
+        - token
+        - lastAddedId
+    color: null
+    isPrivate: false
+    metaSortKey: 1612308543531
+    _type: environment

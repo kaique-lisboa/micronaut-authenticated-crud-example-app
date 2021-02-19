@@ -1,0 +1,47 @@
+micronaut:
+  application:
+    name: gabWeb
+  security:
+    endpoints:
+      login:
+        enabled: true
+    authentication: bearer
+    token:
+      jwt:
+        signatures:
+          secret:
+            generator:
+              secret: XIMURAPULAPULAchamanoisquenoisqueta
+
+users:
+  initial-users:
+    -
+      cpf: 191
+      name: Root
+      email: root@root.com
+      password: root
+      cep: 00000000
+      roles:
+        - ROLE_ADMIN
+    -
+      cpf: 11111111111
+      name: User 2
+      email: user@user.com
+      password: user
+      cep: 00000000
+
+roles:
+  admin-role-name: ROLE_ADMIN
+  initial-roles:
+    - ROLE_ADMIN
+
+datasources:
+  default:
+    url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+    schema-generate: CREATE_DROP
+    dialect: H2
+jpa.default.properties.hibernate.hbm2ddl.auto: update
+jpa.default.properties.hibernate.show_sql: false
